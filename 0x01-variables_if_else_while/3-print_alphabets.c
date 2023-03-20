@@ -10,7 +10,7 @@ int main(void)
 	int a = 97;
 	int c = 65;
 
-	while (a <=122)
+	while (a <= 122)
 	{
 		putchar(a);
 		a++;
