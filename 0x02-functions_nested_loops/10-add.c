@@ -6,12 +6,13 @@
  * @b: int to be added to a
  * Return: sum of a and b
  */
-
 int add(int a, int b)
 {
-	int result;
+	int c;
 
-	result = a + b;
-	return (result);
+	c = a + b;
+
+	return (c);
 }
+
 
