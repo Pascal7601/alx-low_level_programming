@@ -1,10 +1,11 @@
 #include "main.h"
 
 /**
- * main - Enrty Point
- * Description: 'Prints last digit of a number'
- * Return: Always 0 (Success)
+ * print_last_digit - prints the last digit of a number
+ * @n: the int to extract the last digit from
+ * Return: value of the last digit
  */
+
 int print_last_digit(int n)
 {
 	int l;

@@ -1,19 +1,17 @@
 #include "main.h"
 
+
 /**
- * main - Entry Point
- *Description: 'Checks for alphabets'
- * Return: Always 0 (Success)
+ * _islower - check if char is lowercase
+ * @c: is the char to be checked
+ * Return: 1 if char is lowercase, otherwise 0.
  */
-int _isalpha(int c)
+
+int _islower(int c)
 {
-	if ((c >= 97 && c <= 122) || (c >= 65 && c <= 90))
-	{
+	if (c >= 'a' && c <= 'z')
 		return (1);
-	}
 	else
-	{
 		return (0);
-	}
-	_putchar('\n');
 }
+

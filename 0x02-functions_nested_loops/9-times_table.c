@@ -1,10 +1,9 @@
 #include "main.h"
 
 /**
- * main - Entry Point
- * Description: 'Prints the 9times table'
- * Return: Always 0 (Success)
+ * times_table - prints the 9 times table, starting with 0
  */
+
 void times_table(void)
 	int i, j, k;
 {
