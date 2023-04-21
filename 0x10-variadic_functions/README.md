@@ -1,1 +1,19 @@
-Getting around with variadic functions
+[master 607a1c6] variadic functions
+ 17 files changed, 216 insertions(+)
+ create mode 100644 0x10-variadic_functions/.0-sum_them_all.c.swp
+ create mode 100644 0x10-variadic_functions/.1-print_numbers.c.swp
+ create mode 100644 0x10-variadic_functions/0-main.c
+ create mode 100644 0x10-variadic_functions/0-sum_them_all.c
+ create mode 100644 0x10-variadic_functions/1-main.c
+ create mode 100644 0x10-variadic_functions/1-print_numbers.c
+ create mode 100644 0x10-variadic_functions/2-main.c
+ create mode 100644 0x10-variadic_functions/2-print_strings.c
+ create mode 100644 0x10-variadic_functions/3-main.c
+ create mode 100644 0x10-variadic_functions/3-print_all.c
+ create mode 100644 0x10-variadic_functions/README.md
+ create mode 100644 0x10-variadic_functions/_putchar.c
+ create mode 100755 0x10-variadic_functions/a
+ create mode 100755 0x10-variadic_functions/b
+ create mode 100755 0x10-variadic_functions/c
+ create mode 100755 0x10-variadic_functions/d
+ create mode 100644 0x10-variadic_functions/variadic_functions.h
