@@ -21,9 +21,9 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 		free(trav);
 		return (1);
 	}
-	while (i < index - 1)
+	while (i < (index - 1))
 	{
-		if (!trav || !trav->next)
+		if (trav || trav->next == NULL)
 			return (-1);
 		trav = trav->next;
 		i++;
