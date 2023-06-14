@@ -7,6 +7,7 @@
  * @argv: argement vector
  * Return: Always 0
  */
+
 int main(int argc, char *argv[])
 {
 	int num1, num2, result;
@@ -15,7 +16,7 @@ int main(int argc, char *argv[])
 	num2 = atoi(argv[2]);
 	result = num1 * num2;
 
-	if (argc > 3 || argc < 3)
+	if (argc < 2)
 	{
 		printf("Error\n");
 		return (1);
