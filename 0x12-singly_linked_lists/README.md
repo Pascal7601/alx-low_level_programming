@@ -1,0 +1,1 @@
+Singly linked lists are data structures that resemble arrays but with only few advantages compared to arrays.They both can do same tasks but as observed keenly there are few tasks that arrays cannot perform which linked lists can.
