@@ -1,38 +1,89 @@
 #include "lists.h"
+#include <stdio.h>
+
+size_t looped_listint_len(const listint_t *head);
+size_t print_listint_safe(const listint_t *head);
 
 /**
- * print_listint - prints whole list
- * @head: pointer to head
- * Return: node
+ * looped_listint_len - Counts the number of unique nodes
+ * in a looped listint_t linked list.
+ * @head: A pointer to the head of the listint_t to check.
+ *
+ * Return: If the list is not looped - 0.
+ * Otherwise - the number of unique nodes in the list.
  */
+size_t looped_listint_len(const listint_t *head)
+{
+	const listint_t *tortoise, *hare;
+	size_t nodes = 1;
 
-size_t print_listint_safe(const listint_t *head) {
-    const listint_t* slow = head;
-    const listint_t* fast = head;
-    size_t count = 0;
-    int loop_detected = 0;
-    const listint_t* current = head
+	if (head == NULL || head->next == NULL)
+		return (0);
 
-    while (slow != NULL && fast != NULL && fast->next != NULL) {
-        slow = slow->next;
-        fast = fast->next->next;
-        count++;
+	tortoise = head->next;
+	hare = (head->next)->next;
 
-        if (slow == fast) {
-            loop_detected = 1;
-            break;
-        }
-    }
+	while (hare)
+	{
+		if (tortoise == hare)
+		{
+			tortoise = head;
+			while (tortoise != hare)
+			{
+				nodes++;
+				tortoise = tortoise->next;
+				hare = hare->next;
+			}
 
-    if (loop_detected) {
-        printf("-> [%p] %d\n", (void*)slow, slow->n);
-        exit(98);
-    }
-    while (current != NULL) {
-        printf("[%p] %d\n", (void*)current, current->n);
-        current = current->next;
-        count++;
-    }
+			tortoise = tortoise->next;
+			while (tortoise != hare)
+			{
+				nodes++;
+				tortoise = tortoise->next;
+			}
 
-    return count;
+			return (nodes);
+		}
+
+		tortoise = tortoise->next;
+		hare = (hare->next)->next;
+	}
+
+	return (0);
 }
+
+/**
+ * print_listint_safe - Prints a listint_t list safely.
+ * @head: A pointer to the head of the listint_t list.
+ *
+ * Return: The number of nodes in the list.
+ */
+size_t print_listint_safe(const listint_t *head)
+{
+	size_t nodes, index = 0;
+
+	nodes = looped_listint_len(head);
+
+	if (nodes == 0)
+	{
+		for (; head != NULL; nodes++)
+		{
+			printf("[%p] %d\n", (void *)head, head->n);
+			head = head->next;
+		}
+	}
+
+	else
+	{
+		for (index = 0; index < nodes; index++)
+		{
+			printf("[%p] %d\n", (void *)head, head->n);
+			head = head->next;
+		}
+
+		printf("-> [%p] %d\n", (void *)head, head->n);
+	}
+
+	return (nodes);
+}
+
