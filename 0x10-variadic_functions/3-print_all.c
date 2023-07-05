@@ -8,11 +8,8 @@
 */
 void print_all(const char * const format, ...)
 {
-	char c;
-	int i;
-	float f;
-	char *s;
 	int h = 0;
+	char* s;
 
 	va_list(any);
 
@@ -22,29 +19,26 @@ void print_all(const char * const format, ...)
 	{
 		if (format[h] == 'c')
 		{
-			c = va_arg(any, int);
-			printf("%c", c);
+			printf("%c", va_arg(any, int));
 		}
 		else if (format[h] == 'i')
 		{
-			i = va_arg(any, int);
-			printf("%d", i);
+			printf("%d", va_arg(any, int));
 		}
 		else if (format[h] == 'f')
 		{
-			f = va_arg(any, double);
-			printf("%f", f);
+			printf("%f", va_arg(any, double));
 		}
 		else if (format[h] == 's')
 		{
 			s = va_arg(any, char *);
 			if (s == NULL)
 			{
-				printf("(nil)");
+				s = "(nil)";
 			}
 			else
 			{
-				printf("%s", s);
+				printf(", %s", s);
 			}
 		}
 		h++;
