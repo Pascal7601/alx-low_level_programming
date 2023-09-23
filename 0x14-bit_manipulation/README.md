@@ -1,1 +1,1 @@
-Bit mannipulation
+all about bit manipulation
